@@ -25,7 +25,7 @@ app.get('/', function(req, res){
     res.render('home.html');
 });
 
-// rest service
+// socket.io service
 io.sockets.on('connection', function(socket){
     //get
     socket.on('getUsers', function(){
