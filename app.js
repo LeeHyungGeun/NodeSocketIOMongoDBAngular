@@ -48,7 +48,6 @@ function UserListCtrl($scope, socket){
         this.password = '';
         this.email = '';
 
-        var data = 'data=' + JSON.stringify(formData);
         socket.emit('insertUser', formData);
         return false;
     };
@@ -60,7 +59,7 @@ function UserListCtrl($scope, socket){
             "email": this.user.email,
             "_id": this.user._id
         };
-        var data = 'data=' + JSON.stringify(userData);
+        
         socket.emit('updateUser', userData);
         return false;
     };
@@ -71,8 +70,7 @@ function UserListCtrl($scope, socket){
             "password": this.user.password,
             "email": this.user.email
         };
-        var data = 'data=' + JSON.stringify(userData);
-
+        
         socket.emit('removeUser', userData);
         return false;
     };
