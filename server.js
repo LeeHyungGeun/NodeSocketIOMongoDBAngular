@@ -27,7 +27,7 @@ app.get('/', function(req, res){
 
 // rest service
 io.sockets.on('connection', function(socket){
-    //GET
+    //get
     socket.on('getUsers', function(){
         db.things.find('', function(err, users){
             if(err){
@@ -48,7 +48,7 @@ io.sockets.on('connection', function(socket){
             }
         });
     }
-    //POST
+    //insert
     socket.on('insertUser', function(data){
         db.things.save({username: data.username, password: data.password, email: data.email}, function(err, saved){
             if(err){
@@ -59,7 +59,7 @@ io.sockets.on('connection', function(socket){
             }
         });
     });
-    //PUT
+    //update
     socket.on('updateUser', function(data){
         var ObjectId = mongojs.ObjectId;
         db.things.update({_id: ObjectId(data._id)}, {username: data.username, password: data.password, email:data.email}, function(err, saved){
@@ -71,7 +71,7 @@ io.sockets.on('connection', function(socket){
             }
         });
     });
-    //DELETE
+    //remove
     socket.on('removeUser', function(data){
         db.things.remove(data, function(err, saved){
             if(err){
