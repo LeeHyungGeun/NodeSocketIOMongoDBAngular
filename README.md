@@ -1,7 +1,6 @@
-NodeSocketIOMongoDBAngular
+Single Page Application with Angular.js, Node.js(Socket.IO) and MongoDB (MongoJS Module)
 ==========================
 
-Single Page Application with Angular.js, Node.js(Socket.IO) and MongoDB (MongoJS Module)
 
 This code is an integration of Angular.js, Node.js and MongoDB
 
